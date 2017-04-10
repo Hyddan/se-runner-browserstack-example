@@ -1,0 +1,1 @@
+BrowserStackLocal.exe -v -f -localIdentifier SeRunner [BrowserStackApiKey] %cd%

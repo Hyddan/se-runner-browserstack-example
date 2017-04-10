@@ -1,0 +1,30 @@
+{
+    "curly": true,
+    "eqeqeq": true,
+    "immed": true,
+    "newcap": true,
+    "eqnull": true,
+    "noarg": true,
+    "noempty": true,
+    "latedef": true,
+    "undef": true,
+    "unused": true,
+    "strict": false,
+    "trailing": true,
+    "node": true,
+    "jquery": true,
+    "devel": true,
+    "browser": true,
+    "loopfunc": true,
+    "sub": true,
+    "nonstandard": true,
+    "boss": true,
+    "expr": true,
+    "predef": [
+        "afterAll",
+        "beforeAll",
+        "describe",
+        "expect",
+        "it"
+    ]
+}

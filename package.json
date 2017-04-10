@@ -1,0 +1,38 @@
+{
+  "name": "se-runner-browserstack-example",
+  "version": "1.0.0",
+  "description": "Ready to run example using se-runner with grunt-se-runner and se-runner-framework-jasmine towards BrowserStack",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Hyddan/se-runner-browserstack-example.git"
+  },
+  "keywords": [
+    "Grunt",
+    "Plugin",
+    "SeRunner",
+    "SeRunnerFrameworkJasmine",
+    "Jasmine",
+    "Selenium",
+    "Test",
+    "Runner",
+    "BrowserStack",
+    "Example",
+    "se-runner",
+    "grunt-se-runner",
+    "se-runner-framework-jasmine"
+  ],
+  "author": "Daniel Hedenius",
+  "license": "WTFPL-2.0",
+  "bugs": {
+    "url": "https://github.com/Hyddan/se-runner-browserstack-example/issues"
+  },
+  "homepage": "https://github.com/Hyddan/se-runner-browserstack-example#readme",
+  "devDependencies": {
+    "grunt-contrib-jshint": "^1.1.0",
+    "grunt-se-runner": "^1.1.1",
+    "grunt-shell-spawn": "^0.3.10",
+    "jshint-stylish": "^2.2.1",
+    "load-grunt-tasks": "^3.5.2",
+    "se-runner-framework-jasmine": "^1.1.0"
+  }
+}

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>SeRunner BrowserStack Example - Test Harness</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style type="text/css">
+            body {
+                margin: 0;
+                padding: 0;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="pageContainer">
+            <video id="player" class="player">
+                <source src="data/sintel-trailer-480p.mp4" type="video/mp4">
+            </video>
+            <br />
+            <button id="play" class="play" onclick="document.querySelector('video#player').play()">Play</button>
+        </div>
+        <script type="text/javascript">
+            window.Result = {
+                didLoad: false,
+                didPlay: false,
+                didPause: false
+            };
+
+            var video = document.querySelector('video#player');
+            video.addEventListener('loadedmetadata', function () {
+                window.Result.didLoad = true;
+
+                video.play();
+            });
+            video.addEventListener('play', function () {
+                window.Result.didPlay = true;
+
+                setTimeout(function () {
+                    video.pause();
+                }, 2000);
+            });
+            video.addEventListener('pause', function () {
+                window.Result.didPause = true;
+            });
+        </script>
+    </body>
+</html>
