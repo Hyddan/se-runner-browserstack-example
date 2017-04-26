@@ -22,25 +22,51 @@
             window.Result = {
                 didLoad: false,
                 didPlay: false,
-                didPause: false
+                didPause: false,
+                didStartLoad: false,
+                playable: false,
+                duration: 0,
+                position: 0,
+                volume: 0.5
             };
 
             var video = document.querySelector('video#player');
+            video.addEventListener('loadstart', function () {
+                window.Result.didStartLoad = true;
+            });
             video.addEventListener('loadedmetadata', function () {
                 window.Result.didLoad = true;
 
                 video.play();
             });
+            video.addEventListener('canplay', function () {
+                window.Result.playable = true;
+            });
             video.addEventListener('play', function () {
                 window.Result.didPlay = true;
-
-                setTimeout(function () {
-                    video.pause();
-                }, 2000);
             });
             video.addEventListener('pause', function () {
                 window.Result.didPause = true;
             });
+            video.addEventListener('durationchange', function () {
+                window.Result.duration = video.duration;
+            });
+            video.addEventListener('timeupdate', function () {
+                window.Result.position = video.currentTime;
+            });
+            video.addEventListener('volumechange', function () {
+                window.Result.volume = video.volume;
+            });
+
+            window.callAfterPlayable = function (func) {
+                var once = function () {
+                    video.removeEventListener('canplay', once);
+
+                    func.call(video);
+                };
+
+                window.Result.didLoad ? func.call(video) : video.addEventListener('canplay', once);
+            };
         </script>
     </body>
 </html>

@@ -29,10 +29,10 @@
   "homepage": "https://github.com/Hyddan/se-runner-browserstack-example#readme",
   "devDependencies": {
     "grunt-contrib-jshint": "^1.1.0",
-    "grunt-se-runner": "^1.1.1",
+    "grunt-se-runner": "^1.2.0",
     "grunt-shell-spawn": "^0.3.10",
     "jshint-stylish": "^2.2.1",
     "load-grunt-tasks": "^3.5.2",
-    "se-runner-framework-jasmine": "^1.1.0"
+    "se-runner-framework-jasmine": "^1.1.1"
   }
 }

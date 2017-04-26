@@ -101,7 +101,7 @@ module.exports = function (grunt) {
                 options: {
                     capabilities: desktopCapabilities,
                     tests: [
-                        'test/desktop/**/*.js'
+                        'test/**/desktop/**/*.js'
                     ]
                 }
             },
@@ -109,7 +109,7 @@ module.exports = function (grunt) {
                 options: {
                     capabilities: mobileCapabilities,
                     tests: [
-                        'test/mobile/**/*.js'
+                        'test/**/mobile/**/*.js'
                     ]
                 }
             },
@@ -117,7 +117,7 @@ module.exports = function (grunt) {
                 options: {
                     capabilities: limitedMobileCapabilities,
                     tests: [
-                        'test/limited-mobile/**/*.js'
+                        'test/**/limited-mobile/**/*.js'
                     ]
                 }
             }
