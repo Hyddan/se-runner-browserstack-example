@@ -1,6 +1,6 @@
 {
   "name": "se-runner-browserstack-example",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Ready to run example using se-runner with grunt-se-runner and se-runner-framework-jasmine towards BrowserStack",
   "repository": {
     "type": "git",
