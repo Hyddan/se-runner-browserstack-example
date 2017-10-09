@@ -47,7 +47,7 @@ module.exports = function (grunt) {
         },
         shell: {
             browserStackLocal: {
-                command: 'BrowserStackLocal --local-identifier Kgb --key ' + browserStackApiKey + ' --folder ' + require('path').join(process.cwd(), 'server'),
+                command: 'BrowserStackLocal --local-identifier SeRunner --key ' + browserStackApiKey + ' --folder ' + require('path').join(process.cwd(), 'server'),
                 options: {
                     async: true,
                     stopIfStarted: true,
@@ -56,7 +56,7 @@ module.exports = function (grunt) {
                             browserStackLocalRunning = true;
                         }
                     },
-                    stderr: function (data) {console.log(data);
+                    stderr: function (data) {
                         // jshint unused:false
                         browserStackLocalRunning = false;
                         grunt.fail.fatal('Unable to start BrowserStackLocal tunnel');
