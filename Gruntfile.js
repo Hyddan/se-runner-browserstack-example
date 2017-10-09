@@ -70,42 +70,6 @@ module.exports = function (grunt) {
                         cwd: './server'
                     }
                 }
-            },
-            localWebServer: {
-                command: 'node server',
-                options: {
-                    async: true,
-                    execOptions: {
-                        cwd: './server'
-                    },
-                    stdout: function (data) {
-                        console.log(data);
-                    },
-                    stderr: function (data) {
-                        console.log(data);
-                    },
-                    callback: function (exitCode, stdOutStr, stdErrStr, done) {
-                        done();
-                    }
-                }
-            },
-            seleniumStandalone: {
-                command: 'selenium-standalone start',
-                options: {
-                    async: true,
-                    execOptions: {
-                        cwd: './node_modules/.bin'
-                    },
-                    stdout: function (data) {
-                        console.log(data);
-                    },
-                    stderr: function (data) {
-                        console.log(data);
-                    },
-                    callback: function (exitCode, stdOutStr, stdErrStr, done) {
-                        done();
-                    }
-                }
             }
         },
         seRunner: {
@@ -146,36 +110,6 @@ module.exports = function (grunt) {
                     capabilities: limitedMobileCapabilities,
                     tests: [
                         'test/**/limited-mobile/**/*.js'
-                    ]
-                }
-            },
-            local: {
-                options: {
-                    capabilities: [
-                        {
-                            browserName: 'chrome'
-                        }
-                    ],
-                    context: {
-                        url: 'http://localhost:9999/harness.html'
-                    },
-                    driverFactory: {
-                        create: function (capabilities) {
-                            var webdriverLogging = require('selenium-webdriver/lib/logging'),
-                                    loggingPreferences = new webdriverLogging.Preferences();
-                            loggingPreferences.setLevel(webdriverLogging.Type.BROWSER, webdriverLogging.Level.DEBUG);
-                            return new (require('selenium-webdriver')).Builder()
-                                                                        .usingServer(this.selenium.hub)
-                                                                        .withCapabilities(capabilities)
-                                                                        .setLoggingPrefs(loggingPreferences)
-                                                                        .build();
-                        }
-                    },
-                    selenium: {
-                        hub: 'http://localhost:4444/wd/hub'
-                    },
-                    tests: [
-                        'test/**/desktop/**/*.js'
                     ]
                 }
             },
@@ -231,7 +165,6 @@ module.exports = function (grunt) {
 
     grunt.registerTask('startBrowserStackLocal', ['shell:browserStackLocal', 'waitForBrowserStackLocal']);
 
-    grunt.registerTask('test.local', ['jshint', 'shell:seleniumStandalone', 'shell:localWebServer', 'seRunner:local']);
     grunt.registerTask('test.all', ['jshint', 'startBrowserStackLocal', 'seRunner:desktop', 'seRunner:limitedMobile', 'seRunner:mobile']);
     grunt.registerTask('default', ['test.all']);
 };

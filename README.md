@@ -35,6 +35,7 @@ In lieu of a formal style guide, take care to maintain the existing coding style
 
 ## Release History
 
+ * 2017-10-09   v1.3.0   Broke out local selenium-standalone example into own repo.
  * 2017-10-09   v1.2.1   Removed debug log.
  * 2017-10-09   v1.2.0   Added example for local testing with selenium-standalone.
  * 2017-04-26   v1.1.0   Refactored example tests.
