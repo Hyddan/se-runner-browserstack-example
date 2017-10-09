@@ -1,6 +1,6 @@
 {
   "name": "se-runner-browserstack-example",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Ready to run example using se-runner with grunt-se-runner and se-runner-framework-jasmine towards BrowserStack",
   "repository": {
     "type": "git",
@@ -28,11 +28,16 @@
   },
   "homepage": "https://github.com/Hyddan/se-runner-browserstack-example#readme",
   "devDependencies": {
+    "express": "^4.16.1",
     "grunt-contrib-jshint": "^1.1.0",
     "grunt-se-runner": "^1.2.0",
     "grunt-shell-spawn": "^0.3.10",
     "jshint-stylish": "^2.2.1",
     "load-grunt-tasks": "^3.5.2",
-    "se-runner-framework-jasmine": "^1.1.1"
+    "se-runner-framework-jasmine": "^1.1.1",
+    "selenium-standalone": "^6.9.0"
+  },
+  "scripts": {
+    "postinstall": "node_modules/.bin/selenium-standalone install"
   }
 }

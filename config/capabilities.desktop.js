@@ -11,7 +11,6 @@ module.exports = [
     },
     {
         browserName: 'firefox',
-        browser_version: '49',
         os: 'Windows',
         os_version: '10'
     }
